@@ -31,7 +31,7 @@ from .models import Choice, Question
 #     # response = "You're looking at the results of question %s."
 #     question = get_object_or_404(Question, pk=question_id)
 #     # return HttpResponse(response % question_id)
-#     return render(request, 'polls/result.html', {'question': question})
+#     return render(request, 'polls/results.html', {'question': question})
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -49,7 +49,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = 'polls/result.html'
+    template_name = 'polls/detail.html'
 
     def get_queryset(self):
         """
@@ -59,7 +59,7 @@ class DetailView(generic.DetailView):
 
 class ResultView(generic.DetailView):
     model = Question
-    template_name = 'polls/detail.html'
+    template_name = 'polls/results.html'
 
 
 def vote(request, question_id):

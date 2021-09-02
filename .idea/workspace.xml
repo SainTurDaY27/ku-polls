@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09e8380a-38f9-4258-b89d-710c455c945c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mysite/polls/static/polls/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/polls/templates/polls/results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/templates/polls/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/templates/polls/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/templates/polls/result.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/polls/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/polls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +24,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,6 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -58,7 +64,8 @@
       <workItem from="1630508187754" duration="166000" />
       <workItem from="1630557268001" duration="3125000" />
       <workItem from="1630560599790" duration="3028000" />
-      <workItem from="1630564680879" duration="1103000" />
+      <workItem from="1630564680879" duration="5676000" />
+      <workItem from="1630577224750" duration="1003000" />
     </task>
     <servers />
   </component>
