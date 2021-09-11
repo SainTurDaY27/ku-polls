@@ -51,9 +51,12 @@ class QuestionModelTests(TestCase):
         is within the present day and the present day is
         within end_date.
         """
-        time = timezone.now()
-        recent_question = Question(pub_date=time)
-        self.assertIs(recent_question.can_vote(), True)
+        pub_time = timezone.now()
+        end_time = timezone.now() + timezone.timedelta(hours=10)
+        question_1 = Question(pub_date=pub_time)
+        question_2 = Question(pub_date=pub_time, end_date=end_time)
+        self.assertIs(question_1.can_vote(), True)
+        self.assertIs(question_2.can_vote(), True)
 
 
 def create_question(question_text, days):
