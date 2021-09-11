@@ -36,6 +36,25 @@ class QuestionModelTests(TestCase):
         recent_question = Question(pub_date=time)
         self.assertIs(recent_question.was_published_recently(), True)
 
+    def test_is_published(self):
+        """
+        is_published() returns True for questions whose pub_date
+        is within the present time.
+        """
+        time = timezone.now() - datetime.timedelta(days=1)
+        recent_question = Question(pub_date=time)
+        self.assertIs(recent_question.is_published(), True)
+
+    def test_can_vote(self):
+        """
+        can_vote() returns True for questions whose pub_date
+        is within the present day and the present day is
+        within end_date.
+        """
+        time = timezone.now()
+        recent_question = Question(pub_date=time)
+        self.assertIs(recent_question.can_vote(), True)
+
 
 def create_question(question_text, days):
     """
@@ -58,16 +77,6 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(response.context['latest_question_list'], [])
 
     def test_past_question(self):
-        # """
-        # Question with a pub_date in the past are displayed on the
-        # index page.
-        # """
-        # create_question(question_text="Past question.", days=-30)
-        # response = self.client.get(reverse('polls:index'))
-        # self.assertQuerysetEqual(
-        #     response.context['latest_question_list'],
-        #     ['<Question: Past question.>']
-        # )
         """
         The detail view of a question with a pub_date in the past
         displays the question's text.
@@ -78,14 +87,6 @@ class QuestionIndexViewTests(TestCase):
         self.assertContains(response, past_question.question_text)
 
     def test_future_question(self):
-        # """
-        # Question with a pub_date in the future aren't displayed on
-        # the index page.
-        # """
-        # create_question(question_text="Future question.", days=30)
-        # response = self.client.get(reverse('polls:index'))
-        # self.assertContains(response, "No polls are available.")
-        # self.assertQuerysetEqual(response.context['latest_question_list'], [])
         """
         The detail view of a question with a pub_date in the future
         returns a 404 not found
@@ -94,7 +95,6 @@ class QuestionIndexViewTests(TestCase):
         url = reverse('polls:detail', args=(future_question.id,))
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
-
 
     def test_future_question_and_past_question(self):
         """
