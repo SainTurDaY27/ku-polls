@@ -1,9 +1,10 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.contrib import messages
 
 from .models import Choice, Question
 
@@ -32,6 +33,14 @@ class DetailView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if not self.object.can_vote():
+            messages.error(request, 'This poll is not allowed to vote.')
+            return redirect('polls:index')
+        else:
+            return render(request, self.template_name, self.get_context_data())
+
 
 class ResultView(generic.DetailView):
     model = Question
@@ -52,3 +61,5 @@ def vote(request, question_id):
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
     # return HttpResponse("You're voting on question %s." % question_id)
+
+
