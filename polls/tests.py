@@ -53,10 +53,8 @@ class QuestionModelTests(TestCase):
         """
         pub_time = timezone.now()
         end_time = timezone.now() + timezone.timedelta(hours=10)
-        question_1 = Question(pub_date=pub_time)
-        question_2 = Question(pub_date=pub_time, end_date=end_time)
+        question_1 = Question(pub_date=pub_time, end_date=end_time)
         self.assertIs(question_1.can_vote(), True)
-        self.assertIs(question_2.can_vote(), True)
 
 
 def create_question(question_text, days):
@@ -66,7 +64,7 @@ def create_question(question_text, days):
     in the past, positive for questions that have yet to be published).
     """
     time = timezone.now() + datetime.timedelta(days=days)
-    return Question.objects.create(question_text=question_text, pub_date=time)
+    return Question.objects.create(question_text=question_text, pub_date=time, end_date=time + datetime.timedelta(days=6))
 
 
 class QuestionIndexViewTests(TestCase):
@@ -111,3 +109,15 @@ class QuestionIndexViewTests(TestCase):
             response.context['latest_question_list'],
             ['<Question: Past question 2.>', '<Question: Past question 1.>']
         )
+
+    def test_past_question_after_end_date(self):
+        """
+        Test about past question that pass the end date of itself, It will redirect to
+        index page for returning error message.
+        """
+        past_question = create_question(question_text='After end date Question.', days=-7)
+        url = reverse('polls:detail', args=(past_question.id,))
+        response = self.client.get(url)
+        self.assertRedirects(response, reverse('polls:index'), status_code=302, target_status_code=200)
+
+
