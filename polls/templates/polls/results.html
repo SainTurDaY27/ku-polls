@@ -1,9 +1,52 @@
 <h1>{{ question.question_text }}</h1>
+<style>
+    table {
+    font-family: "Droid Serif", "DejaVu Serif", "STIX", serif, sans-serif;
+    border-collapse: inherit;
+    width: 70%;
+}
+td{
+  border: 1px solid;
+  text-align: center;
+  padding: 8px;
+}
+th {
+  border: 1px solid ;
+  text-align: center;
+  padding: 8px;
+    background-color: #9CDCFE;
+}
+tr:nth-child(even) {
+  background-color: snow;
+}
+    .button {
+        border: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration:  none;
+        display: inline-block;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 
-<ul>
+    .button1 {background-color: #9CDCFE;}
+    .button2 {background-color: aquamarine;}
+</style>
+
+<table>
+    <tr>
+        <th> Responses </th>
+        <th> Votes </th>
+    </tr>
     {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <tr>
+        <td>{{ choice.choice_text }}</td>
+        <td>{{ choice.votes }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a class="button1" href="{% url 'polls:detail' question.id %}">Vote again</a>
+<a class="button2" href="{% url 'polls:index' %}">Back to List of Polls</a>

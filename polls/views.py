@@ -1,46 +1,25 @@
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.template import loader
+"""This views.py contain IndexView, DetailView, ResultView class."""
+from django.shortcuts import get_object_or_404, render, redirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.contrib import messages
 
 from .models import Choice, Question
 
 
-# def index(request):
-#     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-#     # template = loader.get_template('polls/index.html')
-#     context = {'latest_question_list': latest_question_list}
-#     # output = ', '.join([q.question_text for q in lastest_question_list])
-#     # return HttpResponse(template.render(context, request))
-#     return render(request, 'polls/index.html', context)
-
-
-# def detail(request, question_id):
-#     question = get_object_or_404(Question, pk=question_id)
-#     # try:
-#     #     question = Question.objects.get(pk=question_id)
-#     # except Question.DoesNotExist:
-#     #     raise Http404("Question does not exist.")
-#     # # return HttpResponse("You're looking at question %s." % question_id)
-#     return render(request, 'polls/detail.html', {'question': question})
-
-
-# def result(request, question_id):
-#     # response = "You're looking at the results of question %s."
-#     question = get_object_or_404(Question, pk=question_id)
-#     # return HttpResponse(response % question_id)
-#     return render(request, 'polls/results.html', {'question': question})
-
 class IndexView(generic.ListView):
+    """IndexView class contain get_queryset method."""
+
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
         """
-        Return the last five published questions (not including those set to be
-        published in the future).
+        Return the last five published questions.
+
+        (not including those set to be published in the future).
         """
         return Question.objects.filter(
             pub_date__lte=timezone.now()
@@ -48,21 +27,42 @@ class IndexView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
+    """DetailView class contain get_queryset, get method."""
+
     model = Question
     template_name = 'polls/detail.html'
 
     def get_queryset(self):
-        """
-        Excludes any question that aren't published yet.
-        """
+        """Excludes any question that aren't published yet."""
         return Question.objects.filter(pub_date__lte=timezone.now())
 
+    def get(self, request, *args, **kwargs):
+        """
+        Methods that manage about redirect and return error message.
+
+        If question can vote, redirect to
+        """
+        self.object = self.get_object()
+        if not self.object.can_vote():
+            messages.error(request, 'This poll is not allowed to vote.')
+            return redirect('polls:index')
+        else:
+            return render(request, self.template_name, self.get_context_data())
+
+
 class ResultView(generic.DetailView):
+    """ResultView class contain model and template name."""
+
     model = Question
     template_name = 'polls/results.html'
 
 
 def vote(request, question_id):
+    """
+    Methods that manage about redirect when user have vote.
+
+    and return error message when vote is not allowed.
+    """
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
@@ -74,5 +74,5 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-    # return HttpResponse("You're voting on question %s." % question_id)
+        return HttpResponseRedirect(reverse('polls:results',
+                                            args=(question.id,)))

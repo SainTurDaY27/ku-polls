@@ -1,14 +1,21 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--</body>-->
-<!--</html>-->
 <h1>{{ question.question_text }}</h1>
+
+<style>
+    .button {
+        border: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration:  none;
+        display: inline-block;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {background-color: #9CDCFE;}
+    .button2 {background-color: aquamarine;}
+</style>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -18,5 +25,7 @@
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
-<input type="submit" value="Vote">
+<input class="button1" type="submit" value="Vote">
 </form>
+
+<a class="button2" href="{% url 'polls:index' %}">Back to List of Polls</a>
