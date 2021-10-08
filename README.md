@@ -1,4 +1,5 @@
 # ku-polls
+[![Build Status](https://travis-ci.com/SainTurDaY27/ku-polls.svg?branch=add-ci)](https://travis-ci.com/SainTurDaY27/ku-polls)
 
 A web application for conducting polls at [Kasetsart University](https://www.ku.ac.th)
 
