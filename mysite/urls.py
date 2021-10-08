@@ -1,4 +1,5 @@
 """This urls.py contain path of each redirect."""
+
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
