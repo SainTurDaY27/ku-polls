@@ -15,3 +15,6 @@ install:
 # script to run tests. Script can have many commands, one per line.
 script:
   - python manage.py test
+
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
