@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09e8380a-38f9-4258-b89d-710c455c945c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/registration/logged_out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/registration/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/tests/auth_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/tests/question_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -97,6 +106,13 @@
       <workItem from="1634803532340" duration="288000" />
       <workItem from="1634803843460" duration="867000" />
       <workItem from="1634825511008" duration="595000" />
+      <workItem from="1635138040498" duration="281000" />
+      <workItem from="1635142707781" duration="3929000" />
+      <workItem from="1635171070673" duration="616000" />
+      <workItem from="1635229460239" duration="604000" />
+      <workItem from="1635257186680" duration="619000" />
+      <workItem from="1635317353610" duration="891000" />
+      <workItem from="1635501251224" duration="346000" />
     </task>
     <servers />
   </component>

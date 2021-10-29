@@ -1,4 +1,5 @@
 """This urls.py contain path of each redirect."""
+from mysite import views
 
 """mysite URL Configuration
 
@@ -22,4 +23,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('', RedirectView.as_view(url='polls/', permanent=True)),
     path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls), ]
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('signup/', views.signup, name='signup')
+]
