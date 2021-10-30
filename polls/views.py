@@ -5,8 +5,9 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-from .models import Choice, Question
+from .models import Choice, Question, Vote
 
 
 class IndexView(generic.ListView):
@@ -57,6 +58,22 @@ class ResultView(generic.DetailView):
     template_name = 'polls/results.html'
 
 
+def get_vote_for_user(user, question):
+    """
+    Find and return an existing vote for a user on a poll question.
+    Returns:
+        The user's vote or None if there are no votes for this question.
+    """
+    try:
+        votes = Vote.objects.filter(user=user).filter(choice__question=question)
+        if votes.count() == 0:
+            return None
+        return votes[0]
+    except Vote.DoesNotExist:
+        return None
+
+
+@login_required(login_url='/accounts/login/')
 def vote(request, question_id):
     """
     Methods that manage about redirect when user have vote.
@@ -72,7 +89,21 @@ def vote(request, question_id):
             'error_message': "You didn't select a choice.",
         })
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
+        # selected_choice.votes += 1
+        # selected_choice.save()
+        user = request.user
+        user_vote = get_vote_for_user(user, question)
+        if user_vote is None:
+            user_vote = Vote.objects.create(user=user, choice=selected_choice)
+        else:
+            user_vote.choice = selected_choice
+        user_vote.save()
         return HttpResponseRedirect(reverse('polls:results',
                                             args=(question.id,)))
+
+# @login_required(login_url='/accounts/login/')
+# def vote(request, question_id):
+#     """Vote for one of the answers to a question."""
+#     user = request.user
+#     print("current user is", user.id, "login", user.username)
+#     print("Real name:", user.first_name, user.last_name)

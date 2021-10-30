@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09e8380a-38f9-4258-b89d-710c455c945c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templates/registration/logged_out.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templates/registration/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/tests/auth_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/tests/question_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/tests/question_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templates/polls/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/polls/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/registration/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/tests/index_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/tests/auth_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/tests/poll_dates_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/tests/question_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/tests/auth_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,107 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: polls.tests.poll_dates_test.QuestionModelTests">
+    <configuration name="Test: polls.tests.auth_test.UserAuthTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ku-polls-2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="polls.tests.auth_test.UserAuthTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: polls.tests.index_test.QuestionIndexViewTests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ku-polls-2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="polls.tests.index_test.QuestionIndexViewTests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: polls.tests.index_test.QuestionIndexViewTests.test_past_question" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ku-polls-2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="polls.tests.index_test.QuestionIndexViewTests.test_past_question" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: polls.tests.poll_dates_test.QuestionModelTests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ku-polls-2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="polls.tests.poll_dates_test.QuestionModelTests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: polls.tests.question_test.QuestionTests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ku-polls-2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="polls.tests.question_test.QuestionTests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ku-polls-2" type="Python.DjangoServer" factoryName="Django server">
       <module name="ku-polls-2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +177,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: polls.tests.poll_dates_test.QuestionModelTests" />
+        <item itemvalue="Django tests.Test: polls.tests.index_test.QuestionIndexViewTests.test_past_question" />
+        <item itemvalue="Django tests.Test: polls.tests.index_test.QuestionIndexViewTests" />
+        <item itemvalue="Django tests.Test: polls.tests.question_test.QuestionTests" />
+        <item itemvalue="Django tests.Test: polls.tests.auth_test.UserAuthTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +223,9 @@
       <workItem from="1635229460239" duration="604000" />
       <workItem from="1635257186680" duration="619000" />
       <workItem from="1635317353610" duration="891000" />
-      <workItem from="1635501251224" duration="346000" />
+      <workItem from="1635501251224" duration="8476000" />
+      <workItem from="1635578546438" duration="10942000" />
+      <workItem from="1635602791467" duration="1804000" />
     </task>
     <servers />
   </component>
@@ -130,5 +243,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_auth_test_UserAuthTest_test_logout_view.coverage" NAME="Test: polls.tests.auth_test.UserAuthTest.test_logout_view Coverage Results" MODIFIED="1635604121159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_question_test_QuestionTests.coverage" NAME="Test: polls.tests.question_test.QuestionTests Coverage Results" MODIFIED="1635604439168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_auth_test_UserAuthTest_test_login_view.coverage" NAME="Test: polls.tests.auth_test.UserAuthTest.test_login_view Coverage Results" MODIFIED="1635604169300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_auth_test_UserAuthTest.coverage" NAME="Test: polls.tests.auth_test.UserAuthTest Coverage Results" MODIFIED="1635604407907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_index_test_QuestionIndexViewTests.coverage" NAME="Test: polls.tests.index_test.QuestionIndexViewTests Coverage Results" MODIFIED="1635604511272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_question_test_QuestionModelTests.coverage" NAME="Test: polls.tests.question_test.QuestionModelTests Coverage Results" MODIFIED="1635591822417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_auth_test_UserAuthTest_test_not_login_view.coverage" NAME="Test: polls.tests.auth_test.UserAuthTest.test_not_login_view Coverage Results" MODIFIED="1635593079031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_poll_dates_test_QuestionModelTests.coverage" NAME="Test: polls.tests.poll_dates_test.QuestionModelTests Coverage Results" MODIFIED="1635604601248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_index_test_QuestionIndexViewTests_test_past_question.coverage" NAME="Test: polls.tests.index_test.QuestionIndexViewTests.test_past_question Coverage Results" MODIFIED="1635604578519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ku_polls_2$Test__polls_tests_auth_test_UserAuthTest_test_not_login_vote.coverage" NAME="Test: polls.tests.auth_test.UserAuthTest.test_not_login_vote Coverage Results" MODIFIED="1635594444356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
