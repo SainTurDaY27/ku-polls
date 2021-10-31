@@ -1,14 +1,31 @@
-{#{% extends 'base.html' %}#}
-{##}
+<style>
+    .button {
+        border: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration:  none;
+        display: inline-block;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {background-color: navajowhite;}
+h2 {
+  text-shadow: 0 0 3px sandybrown, 0 0 5px salmon;
+}
+</style>
+
 {% block content %}
-<h2>Register</h2>
+<h2>Register Page</h2>
 <form method="POST">
     {% csrf_token %}
     <table>
     {{ form.as_table }}
     <tr>
     <td colspan="2">
-    <button type="submit">Register</button>
+    <button class="button1" type="submit">Register</button>
     </td>
     </tr>
     </table>

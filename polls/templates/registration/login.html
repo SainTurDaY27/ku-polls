@@ -1,20 +1,19 @@
-{#<html>#}
-{#<body>#}
-{#<h2>Login</h2>#}
-{#<form method="post">#}
-{#  {% csrf_token %}#}
-{#  {{ form.as_p }}#}
-{#  <p>#}
-{#  <button type="submit">Login</button>#}
-{#  </p>#}
-{#  <input type="hidden" name="next" value="{{next}}"/>#}
-{# </form>#}
-{# If you have written a password_reset template, then add here #}
-{#<p>#}
-{#<a href="{% url 'password_reset' %}">Forgot password?</a>#}
-{#</p>#}
-{#</body>#}
-{#</html>#}
+<style>
+    .button {
+        border: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration:  none;
+        display: inline-block;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {background-color: navajowhite;}
+</style>
+
 {% if user.is_authenticated %}
     Welcome back, {{ user.username }}
 {% else %}
@@ -26,7 +25,7 @@
   <table style="padding: 2ex;">
   {{ form.as_table }}
   </table>
-  <button type="submit">Login</button>
+  <button class="button1" type="submit">Login!</button>
   <!-- if your app redirects user to login before accessing some pages, then next contains return url -->
   <input type="hidden" name="next" value="{{next}}" />
 </form>

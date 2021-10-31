@@ -17,21 +17,26 @@
 
     .button1 {background-color: #9CDCFE;}
     .button2 {background-color: aquamarine;}
-</style>
 
+h1 {
+  text-shadow: 0 0 3px sandybrown, 0 0 5px salmon;
+}
+</style>
+<p></p>
+<br />
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
         {% if question.can_vote %}
-            <li><p>{{ question.question_text }} </p><a class="button1" href="{% url 'polls:detail' question.id %}" >vote</a></li>
+            <li><h1>{{ question.question_text }} </h1><a class="button1" href="{% url 'polls:detail' question.id %}" >vote</a>
             <a class="button2" href="{% url 'polls:results' question.id %}">results</a>
         {% else %}
-            <li><p>{{ question.question_text }} </p><a class="button2" href="{% url 'polls:results' question.id %}">results</a></li>
+            <li><h1>{{ question.question_text }} </h1><a class="button2" href="{% url 'polls:results' question.id %}">results</a></li>
         {% endif %}
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <h3>No polls are available.</h3>
 {% endif %}
 
 {% if messages %}
