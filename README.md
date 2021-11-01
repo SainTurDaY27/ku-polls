@@ -9,3 +9,16 @@ A web application for conducting polls at [Kasetsart University](https://www.ku.
 [Background](../../wiki/Background)  
 [Vision Statement](../../wiki/Vision%20Statement)  
 [Requirements](../../wiki/Requirements)
+
+## Running KU Polls
+
+Users provided by the initial data (users.json):
+
+| Username  | Password    |
+|-----------|-------------|
+| demo_1     | Vote4me!    |
+| demo_2     | Vote4me2    |
+
+## Install application
+python3 manage.py migrate  
+python3 manage.py loaddata users polls
