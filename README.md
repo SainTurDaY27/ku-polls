@@ -16,8 +16,8 @@ Users provided by the initial data (users.json):
 
 | Username  | Password    |
 |-----------|-------------|
-| demo_1     | Vote4me!    |
-| demo_2     | Vote4me2    |
+| demo1     | Vote4me!    |
+| demo2     | Vote4me2    |
 
 ## Install application
 python3 manage.py migrate  
