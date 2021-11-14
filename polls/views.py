@@ -89,8 +89,6 @@ def vote(request, question_id):
             'error_message': "You didn't select a choice.",
         })
     else:
-        # selected_choice.votes += 1
-        # selected_choice.save()
         user = request.user
         user_vote = get_vote_for_user(user, question)
         if user_vote is None:
@@ -101,9 +99,3 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results',
                                             args=(question.id,)))
 
-# @login_required(login_url='/accounts/login/')
-# def vote(request, question_id):
-#     """Vote for one of the answers to a question."""
-#     user = request.user
-#     print("current user is", user.id, "login", user.username)
-#     print("Real name:", user.first_name, user.last_name)

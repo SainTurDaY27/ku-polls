@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="09e8380a-38f9-4258-b89d-710c455c945c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../beattosetto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -216,7 +217,10 @@
       <workItem from="1635578546438" duration="10942000" />
       <workItem from="1635602791467" duration="3272000" />
       <workItem from="1635657072995" duration="1275000" />
-      <workItem from="1635746881801" duration="979000" />
+      <workItem from="1635746881801" duration="1303000" />
+      <workItem from="1635768443001" duration="158000" />
+      <workItem from="1635835009220" duration="21000" />
+      <workItem from="1636895408399" duration="350000" />
     </task>
     <servers />
   </component>
